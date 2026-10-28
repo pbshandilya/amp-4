@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Luxaura — refined fashion, beauty and lifestyle essentials curated for modern living.">
+<meta name="theme-color" content="#1c1916">
+<title>Luxaura — The Art of Everyday Luxury</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c1916'/%3E%3Cpath d='M14 17h36L32 49 14 17Z' fill='none' stroke='%23d8b36a' stroke-width='3'/%3E%3Cpath d='M21 17h22M26 26h12' stroke='%23d8b36a' stroke-width='3'/%3E%3C/svg%3E">
+
+<style>
+:root{
+ --ink:#1c1916;
+ --soft:#68615a;
+ --gold:#c9a45d;
+ --gold2:#e1c98e;
+ --cream:#f5f0e7;
+ --ivory:#fbfaf7;
+ --white:#fff;
+ --line:#e6dfd3;
+ --dark:#171411;
+ --max:1220px;
+ --shadow:0 24px 65px rgba(36,29,19,.11);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--ivory);color:var(--ink);font:14px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{width:min(var(--max),91%);margin:auto}
+
+.topbar{
+ background:var(--dark);color:#ded8ce;text-align:center;
+ padding:8px 15px;font-size:9px;letter-spacing:.18em;text-transform:uppercase
+}
+.topbar span{color:var(--gold2)}
+
+header{
+ position:sticky;top:0;z-index:50;
+ background:rgba(251,250,247,.93);
+ border-bottom:1px solid var(--line);
+ backdrop-filter:blur(18px)
+}
+.nav{height:82px;display:flex;align-items:center;gap:30px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{
+ width:39px;height:39px;border:1px solid var(--gold);
+ border-radius:50%;display:grid;place-items:center;
+ font-family:Georgia,serif;color:var(--gold);font-size:20px
+}
+.logo-text{font-family:Georgia,"Times New Roman",serif;font-size:22px;letter-spacing:.12em}
+.logo-text b{font-weight:400}
+.logo-sub{display:block;font:7px Inter,sans-serif;letter-spacing:.28em;color:#8b837a;margin-top:1px}
+nav{display:flex;gap:27px;margin-left:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+nav a{position:relative}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:1px;background:var(--gold);transition:.25s}
+nav a:hover:after{right:0}
+.nav-actions{display:flex;gap:8px}
+.icon{
+ width:38px;height:38px;border:1px solid var(--line);border-radius:50%;
+ background:transparent;display:grid;place-items:center;color:var(--ink);position:relative
+}
+.icon:hover{border-color:var(--gold)}
+.badge{position:absolute;right:-3px;top:-3px;width:16px;height:16px;border-radius:50%;background:var(--gold);font-size:8px;display:grid;place-items:center}
+.menu{display:none}
+
+.hero{padding:24px 0 0}
+.hero-grid{
+ min-height:680px;display:grid;grid-template-columns:.84fr 1.16fr;
+ background:var(--cream);overflow:hidden
+}
+.hero-copy{padding:clamp(40px,7vw,90px);display:flex;justify-content:center;flex-direction:column}
+.eyebrow{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:800;margin:0 0 17px}
+.hero h1{
+ font-family:Georgia,"Times New Roman",serif;
+ font-size:clamp(55px,7vw,94px);line-height:.86;
+ font-weight:400;letter-spacing:-.055em;margin:0
+}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-lead{max-width:420px;color:var(--soft);margin:25px 0;font-size:14px}
+.hero-actions{display:flex;gap:10px}
+.btn{
+ min-height:45px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;
+ font-size:9px;letter-spacing:.13em;text-transform:uppercase;font-weight:850;transition:.25s
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-outline{border:1px solid #cfc6b7}
+.hero-image{min-height:680px;position:relative}
+.hero-image img{object-position:center}
+.hero-label{
+ position:absolute;right:25px;bottom:25px;background:#fbfaf7ee;
+ padding:17px 19px;text-align:center;min-width:125px
+}
+.hero-label small{display:block;font-size:7px;letter-spacing:.18em;color:#8b837a}
+.hero-label b{display:block;font:23px Georgia,serif;margin:2px 0}
+
+.intro{text-align:center;padding:95px 0 80px}
+.intro .eyebrow{margin-bottom:12px}
+.intro h2,.heading h2{
+ font:400 clamp(35px,4.5vw,57px)/.95 Georgia,"Times New Roman",serif;
+ letter-spacing:-.045em;margin:0
+}
+.intro p{max-width:560px;color:var(--soft);margin:16px auto 0}
+
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.category{height:430px;position:relative;overflow:hidden;background:#ddd}
+.category img{transition:.55s}
+.category:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#171411bb,transparent 58%)}
+.category:hover img{transform:scale(1.04)}
+.category-copy{position:absolute;z-index:2;bottom:25px;left:25px;color:#fff}
+.category-copy small{font-size:8px;letter-spacing:.2em;color:#e4dacb}
+.category-copy h3{font:32px Georgia,serif;margin:4px 0}
+.category-copy a{font-size:8px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid #ffffff88;padding-bottom:4px}
+
+.editorial{
+ background:var(--dark);color:#fff;margin-top:20px;padding:95px 0
+}
+.editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.editorial-image{height:610px}
+.editorial-image img{object-position:center}
+.editorial-copy{padding-right:8%}
+.editorial-copy .eyebrow{color:var(--gold2)}
+.editorial-copy h2{font:400 clamp(42px,5vw,67px)/.91 Georgia,serif;letter-spacing:-.055em;margin:0}
+.editorial-copy h2 em{color:var(--gold2);font-style:italic}
+.editorial-copy p{color:#b9b2a8;max-width:470px;margin:22px 0}
+.editorial-note{display:flex;gap:35px;margin:30px 0}
+.editorial-note b{display:block;color:#fff;font:24px Georgia,serif}
+.editorial-note small{font-size:8px;color:#918a81;letter-spacing:.1em;text-transform:uppercase}
+
+.shop{padding:95px 0}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
+.heading p{color:var(--soft);max-width:430px;margin:8px 0 0}
+.view{font-size:9px;letter-spacing:.15em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:5px;white-space:nowrap}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product{position:relative}
+.product-image{height:360px;background:#eee;position:relative;overflow:hidden}
+.product-image img{transition:.5s}
+.product:hover .product-image img{transform:scale(1.035)}
+.product-tag{
+ position:absolute;left:12px;top:12px;background:#fbfaf7;
+ padding:6px 9px;font-size:7px;letter-spacing:.13em;text-transform:uppercase
+}
+.wish{
+ position:absolute;right:12px;top:12px;width:32px;height:32px;border:0;border-radius:50%;
+ background:#fbfaf7df;display:grid;place-items:center;font-size:15px
+}
+.wish.on{color:#a62e3c}
+.product-info{padding:14px 2px}
+.product-info small{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#9a9187}
+.product-info h3{font:17px Georgia,serif;margin:3px 0 8px}
+.price-row{display:flex;justify-content:space-between;align-items:center}
+.price{font-size:12px;font-weight:850}
+.add{
+ border:1px solid var(--ink);background:transparent;padding:8px 11px;
+ font-size:8px;letter-spacing:.1em;text-transform:uppercase
+}
+.add:hover{background:var(--ink);color:#fff}
+
+.quote{
+ background:var(--cream);padding:100px 20px;text-align:center
+}
+.quote-mark{font:50px Georgia,serif;color:var(--gold);line-height:.7}
+.quote blockquote{
+ max-width:780px;margin:22px auto;
+ font:400 clamp(28px,4vw,45px)/1.15 Georgia,serif;
+ letter-spacing:-.03em
+}
+.quote cite{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#8e857b;font-style:normal}
+
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.story-card{min-height:530px;position:relative;overflow:hidden}
+.story-card img{transition:.5s}
+.story-card:hover img{transform:scale(1.03)}
+.story-card:first-child:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#171411c9,transparent 55%)}
+.story-copy{
+ position:absolute;z-index:2;left:30px;right:30px;bottom:28px;color:#fff
+}
+.story-copy h3{font:36px Georgia,serif;margin:3px 0}
+.story-copy p{color:#d8d0c6;max-width:430px;font-size:12px}
+.story-side{display:grid;grid-template-rows:1fr 1fr;gap:20px}
+.story-side .story-card{min-height:255px}
+.story-side .story-copy h3{font-size:26px}
+
+.newsletter{
+ background:var(--dark);color:#fff;padding:65px 7%;
+ display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center
+}
+.newsletter h2{font:400 clamp(37px,5vw,58px)/.9 Georgia,serif;margin:0}
+.newsletter p{color:#aaa39a;max-width:460px}
+.subscribe{display:flex;border-bottom:1px solid #6f675d;padding-bottom:9px}
+.subscribe input{flex:1;min-width:0;background:none;border:0;outline:0;color:#fff;font-size:12px}
+.subscribe button{border:0;background:var(--gold);color:#171411;padding:11px 17px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:900}
+
+footer{background:#11100e;color:#99928a;padding:60px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:35px}
+footer .logo-text{color:#fff}
+footer .logo-sub{color:#77716a}
+footer h4{color:#fff;font-size:9px;letter-spacing:.15em;margin:0 0 14px}
+footer a,footer p{font-size:10px;display:block;margin:7px 0}
+footer a:hover{color:#fff}
+.bottom{border-top:1px solid #ffffff15;margin-top:40px;padding-top:17px;display:flex;justify-content:space-between;font-size:8px;gap:20px}
+
+.toast{
+ position:fixed;right:20px;bottom:20px;z-index:100;
+ background:#1c1916;color:#fff;padding:13px 16px;font-size:10px;
+ box-shadow:0 15px 40px #0005;opacity:0;transform:translateY(15px);pointer-events:none;transition:.25s
+}
+.toast.show{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ nav{display:none}.menu{display:grid}
+ .hero-grid{grid-template-columns:1fr}.hero-image{min-height:560px}
+ .editorial-grid{grid-template-columns:1fr}.editorial-copy{padding:0}
+ .editorial-image{height:500px}
+ .products{grid-template-columns:repeat(2,1fr)}
+ .story-grid{grid-template-columns:1fr}
+ .newsletter{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+}
+@media(max-width:650px){
+ .nav{height:68px}.logo-text{font-size:19px}.nav-actions .icon:nth-child(1){display:none}
+ .hero{padding-top:14px}.hero-grid{display:flex;flex-direction:column}.hero-copy{padding:55px 25px}.hero h1{font-size:59px}.hero-image{min-height:430px}
+ .hero-actions{flex-direction:column}.hero-actions .btn{width:100%}
+ .intro,.shop{padding:65px 0}
+ .categories{grid-template-columns:1fr}.category{height:370px}
+ .editorial{padding:65px 0}.editorial-image{height:430px}
+ .products{grid-template-columns:1fr 1fr;gap:12px}.product-image{height:260px}
+ .heading{align-items:flex-start;flex-direction:column;gap:10px}
+ .story-card{min-height:400px}.story-side .story-card{min-height:260px}
+ .newsletter{padding:48px 25px}.subscribe{display:grid;gap:12px;border:0}.subscribe input{border-bottom:1px solid #6f675d;padding:10px 0}.subscribe button{width:100%}
+ .footer-grid{grid-template-columns:1fr 1fr}.bottom{flex-direction:column}
+}
+@media(max-width:420px){
+ .products{grid-template-columns:1fr}.product-image{height:330px}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">COMPLIMENTARY SHIPPING ON ORDERS ABOVE <span>₹2,999</span> · CURATED WITH INTENTION</div>
+
+<header>
+<div class="wrap nav">
+<a class="logo" href="#home" aria-label="Luxaura home">
+<span class="logo-mark">L</span>
+<span><span class="logo-text"><b>LUXAURA</b></span><span class="logo-sub">THE ART OF EVERYDAY LUXURY</span></span>
+</a>
+
+<nav aria-label="Main navigation">
+<a href="#home">Home</a><a href="#collections">Collections</a><a href="#shop">Shop</a><a href="#journal">Journal</a><a href="#story">About</a>
+</nav>
+
+<div class="nav-actions">
+<button class="icon" aria-label="Search" onclick="showToast('Search is ready for your catalogue.')">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+</button>
+<button class="icon" aria-label="Wishlist">♡<span class="badge" id="wishCount">0</span></button>
+<button class="icon" aria-label="Shopping bag">□<span class="badge" id="cartCount">0</span></button>
+<button class="icon menu" aria-label="Menu" onclick="showToast('Navigation menu')">☰</button>
+</div>
+</div>
+</header>
+
+<main id="home">
+
+<section class="hero">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">The new Luxaura edit</p>
+<h1>Quietly<br><em>extraordinary.</em></h1>
+<p class="hero-lead">A considered collection of fashion, beauty and lifestyle pieces designed to make ordinary moments feel beautifully yours.</p>
+<div class="hero-actions"><a class="btn btn-dark" href="#shop">Discover the edit</a><a class="btn btn-outline" href="#collections">Explore collections</a></div>
+</div>
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85" alt="Elegant fashion boutique styling">
+<div class="hero-label"><small>SPRING / SUMMER</small><b>26</b><small>COLLECTION</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="intro">
+<div class="wrap">
+<p class="eyebrow">A different kind of shopping</p>
+<h2>Luxury isn't loud.</h2>
+<p>Luxaura is built around timeless design, thoughtful details and pieces you will want to keep reaching for.</p>
+</div>
+</section>
+
+<section id="collections">
+<div class="wrap categories">
+<a class="category" href="#shop">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=84" alt="Luxaura fashion collection">
+<div class="category-copy"><small>01 / THE WARDROBE</small><h3>Fashion</h3><a>Discover →</a></div>
+</a>
+<a class="category" href="#shop">
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=84" alt="Luxaura fragrance collection">
+<div class="category-copy"><small>02 / THE RITUAL</small><h3>Beauty</h3><a>Discover →</a></div>
+</a>
+<a class="category" href="#shop">
+<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=84" alt="Luxaura home collection">
+<div class="category-copy"><small>03 / THE HOME</small><h3>Living</h3><a>Discover →</a></div>
+</a>
+</div>
+</section>
+
+<section class="editorial">
+<div class="wrap editorial-grid">
+<div class="editorial-image">
+<img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1100&q=85" alt="Elegant contemporary fashion portrait">
+</div>
+<div class="editorial-copy">
+<p class="eyebrow">The philosophy</p>
+<h2>Less trend.<br>More <em>character.</em></h2>
+<p>We choose pieces for the feeling they create, not the moment they occupy. Soft tailoring, rich textures, warm neutrals and details that reveal themselves slowly.</p>
+<div class="editorial-note"><div><b>50+</b><small>Curated pieces</small></div><div><b>4.9</b><small>Customer love</small></div><div><b>7D</b><small>Easy returns</small></div></div>
+<a class="btn" style="background:var(--gold);color:#171411;width:max-content" href="#shop">Shop the philosophy</a>
+</div>
+</div>
+</section>
+
+<section id="shop" class="shop">
+<div class="wrap">
+<div class="heading">
+<div><p class="eyebrow">The collection</p><h2>Objects of desire.</h2><p>Selected essentials with a refined point of view.</p></div>
+<a class="view" href="#shop">View all pieces →</a>
+</div>
+
+<div class="products">
+<article class="product">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=84" alt="Tailored fashion piece"><span class="product-tag">New</span><button class="wish">♡</button></div>
+<div class="product-info"><small>Wardrobe / 01</small><h3>The Tailored Edit</h3><div class="price-row"><span class="price">₹4,299</span><button class="add">Add to bag</button></div></div>
+</article>
+
+<article class="product">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=84" alt="Luxury perfume bottle"><span class="product-tag">Signature</span><button class="wish">♡</button></div>
+<div class="product-info"><small>Beauty / 02</small><h3>Maison No. 07</h3><div class="price-row"><span class="price">₹2,799</span><button class="add">Add to bag</button></div></div>
+</article>
+
+<article class="product">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=84" alt="Premium skincare collection"><span class="product-tag">Ritual</span><button class="wish">♡</button></div>
+<div class="product-info"><small>Beauty / 03</small><h3>Daily Ritual Set</h3><div class="price-row"><span class="price">₹1,899</span><button class="add">Add to bag</button></div></div>
+</article>
+
+<article class="product">
+<div class="product-image"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=84" alt="Minimal luxury home interior"><span class="product-tag">Home</span><button class="wish">♡</button></div>
+<div class="product-info"><small>Living / 04</small><h3>Linen & Form</h3><div class="price-row"><span class="price">₹3,499</span><button class="add">Add to bag</button></div></div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="journal" class="quote">
+<div class="wrap">
+<div class="quote-mark">“</div>
+<blockquote>“The most beautiful things don't ask for attention. They simply deserve it.”</blockquote>
+<cite>— The Luxaura Journal</cite>
+</div>
+</section>
+
+<section id="story">
+<div class="wrap story-grid">
+<article class="story-card">
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=85" alt="Elegant boutique interior">
+<div class="story-copy"><small>THE WORLD OF LUXAURA</small><h3>Designed for the everyday.</h3><p>A softer approach to shopping, built around pieces that age beautifully with you.</p></div>
+</article>
+<div class="story-side">
+<article class="story-card"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=84" alt="Elegant fashion styling"><div class="story-copy"><small>THE JOURNAL</small><h3>How to build a timeless wardrobe.</h3></div></article>
+<article class="story-card"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=84" alt="Minimal luxury furniture"><div class="story-copy"><small>THE HOME</small><h3>Small details. Big atmosphere.</h3></div></article>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="newsletter">
+<div><p class="eyebrow">The Luxaura letter</p><h2>A little luxury,<br>delivered.</h2><p>New collections, private previews and considered inspiration. No clutter — only things worth knowing.</p></div>
+<form class="subscribe" id="subscribe"><input type="email" required placeholder="Your email address" aria-label="Email address"><button>Join the letter →</button></form>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+<div class="footer-grid">
+<div><a class="logo" href="#home"><span class="logo-mark">L</span><span><span class="logo-text"><b>LUXAURA</b></span><span class="logo-sub">THE ART OF EVERYDAY LUXURY</span></span></a><p>Refined fashion, beauty and lifestyle essentials.</p></div>
+<div><h4>DISCOVER</h4><a href="#collections">Collections</a><a href="#shop">Shop</a><a href="#journal">Journal</a><a href="#story">Our world</a></div>
+<div><h4>SERVICE</h4><a href="#story">Shipping</a><a href="#story">Returns</a><a href="#story">Size guide</a><a href="#story">Contact</a></div>
+<div><h4>FOLLOW</h4><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
+</div>
+<div class="bottom"><span>© 2026 Luxaura. All rights reserved.</span><span>Thoughtfully designed for modern living.</span></div>
+</div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const toast=document.getElementById("toast");let timer;
+function showToast(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove("show"),2400)}
+
+let cart=0,wish=0;
+document.querySelectorAll(".add").forEach(btn=>btn.addEventListener("click",()=>{
+ cart++;document.getElementById("cartCount").textContent=cart;
+ btn.textContent="Added ✓";showToast("Added to your Luxaura bag.");
+ setTimeout(()=>btn.textContent="Add to bag",1100)
+}));
+document.querySelectorAll(".wish").forEach(btn=>btn.addEventListener("click",()=>{
+ btn.classList.toggle("on");const active=btn.classList.contains("on");
+ wish+=active?1:-1;document.getElementById("wishCount").textContent=wish;
+ btn.textContent=active?"♥":"♡";showToast(active?"Saved to your wishlist.":"Removed from wishlist.")
+}));
+document.getElementById("subscribe").addEventListener("submit",e=>{
+ e.preventDefault();e.target.reset();showToast("Welcome to The Luxaura Letter ✦")
+});
+</script>
+</body>
+</html>
